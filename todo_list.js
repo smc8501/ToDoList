@@ -11,7 +11,7 @@ const addTask = () => {
     if (taskText !== "") {
         tasks.push({text: taskText});
         taskInput.value = "";
-        // displayTasks();
+        displayTasks();
     }
 }
 
@@ -24,5 +24,11 @@ const displayTask = () => {
         li.querySelector("input").addEventListener("change", () => toggleTask(index));
         taskList.appendChild(li);
     });
+}
+// This function changes the completion status of a task in the tasks array based on the provided index.
+const toggelTask = (index) => {
+    tasks[index].completed = !tasks[index].completed;
+    displayTasks();
+
 }
 addTaskBtn.addEventListener("click", addTask);
