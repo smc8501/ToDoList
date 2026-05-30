@@ -6,13 +6,16 @@ const clearCompletedBtn = document.getElementById("clearCompletedBtn");
 
 let tasks = [];
 
-const addTask = () => {
+function addTask (tasks, taskInput) {
     const taskText = taskInput.value.trim();
-    if (taskText !== "") {
+    if (taskText !== '') {
         tasks.push({text: taskText});
         taskInput.value = "";
         // displayTasks();
     }
+    throw new Error('Task cannot be empty');
 }
 
-addTaskBtn.addEventListener("click", addTask);
+// addTaskBtn.addEventListener("click", addTask);
+
+module.exports = { addTask };
