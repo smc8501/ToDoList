@@ -20,10 +20,10 @@ function  displayTask() {
 function addTask() {
     const taskText = taskInput.value.trim();
     if (taskText !== "") {
-        tasks.push({text: taskText});
+        tasks.push({text: taskText, completed: false});
         taskInput.value = "";
         displayTask();
-    }
+    };
 }
 
 
@@ -43,3 +43,5 @@ addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
 
 displayTask();
+
+module.exports = {  addTask, displayTask, toggleTask, clearCompletedTasks}
