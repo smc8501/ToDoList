@@ -1,4 +1,4 @@
-let tasks= [];
+
 function createTask(text) {
     return {
         text,
