@@ -6,16 +6,7 @@ const clearCompletedBtn = document.getElementById("clearCompletedBtn");
 
 let tasks = [];
 
-const addTask = () => {
-    const taskText = taskInput.value.trim();
-    if (taskText !== "") {
-        tasks.push({text: taskText});
-        taskInput.value = "";
-        displayTasks();
-    }
-}
-
-const displayTask = () => {
+function  displayTask() {
     taskList.innerHTML ="";
     tasks.forEach((task, index) => {
         const li = document.createElement("li");
@@ -25,10 +16,30 @@ const displayTask = () => {
         taskList.appendChild(li);
     });
 }
+
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if (taskText !== "") {
+        tasks.push({text: taskText});
+        taskInput.value = "";
+        displayTask();
+    }
+}
+
+
 // This function changes the completion status of a task in the tasks array based on the provided index.
-const toggelTask = (index) => {
+function toggleTask (index) {
     tasks[index].completed = !tasks[index].completed;
-    displayTasks();
+    displayTask();
 
 }
+// the filter method filters the task array to retrieve only the tasks that are not marked
+//  as completed, which in turn returns a new array excluding completed tasks.
+function clearCompletedTasks () {
+    tasks = tasks.filter(task => !task.completed);
+    displayTask();
+}
 addTaskBtn.addEventListener("click", addTask);
+clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+
+displayTask();
