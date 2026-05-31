@@ -1,4 +1,4 @@
-function renderTask(tasks, taskList,onToggle) {
+export function renderTask(tasks, taskList,onToggle) {
     taskList.innerHTML = "";
 
     tasks.forEach((task, index) => {
@@ -10,6 +10,7 @@ function renderTask(tasks, taskList,onToggle) {
         `;
         li.querySelector("input").addEventListener("change", () => onToggle(index));
 
-        taskList.appendChid(li);
+        taskList.appendChild(li);
     });
 }
+

@@ -1,4 +1,4 @@
-const { addTask, toggleTask, clearCompletedTask } = require('../model');
+const  { addTask, toggleTask, clearCompletedTask } = require ('../model');
 
 describe('todo model', () => {
     test('adds a task', () => {
@@ -15,7 +15,7 @@ describe('todo model', () => {
         
         const tasks = [];
 
-        addTasks(tasks, 'Buy milk');
+        addTask(tasks, 'Buy milk');
 
         expect(tasks).toEqual([]);
     });
@@ -31,7 +31,7 @@ describe('todo model', () => {
         
         const tasks = [
             {text: 'A', completed: true},
-            {text: 'B', competed: false}
+            {text: 'B', completed: false}
         ];
 
         const result = clearCompletedTask(tasks);
