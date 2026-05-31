@@ -6,18 +6,18 @@ function createTask(text) {
     };
 }
 
-function addTask(tasks, task) {
+export function addTask(tasks, text) {
     if (!text.trim()) return tasks;
 
     return [...tasks, createTask(text)];
 }
 
-function toggleTask(tasks, index) {
+export function toggleTask(tasks, index) {
     return tasks.map((task, i) => 
     i === index ? { ...task, completed: !task.completed } : task);
 }
-function clearCompletedTask(tasks) {
+export function clearCompletedTask(tasks) {
     return tasks.filter(task => !task.completed);
 }
 
-module.exports = { addTask, toggleTask, clearCompletedTask }
+module.exports = { addTask, toggleTask, clearCompletedTask };
