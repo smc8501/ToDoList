@@ -20,4 +20,3 @@ export function clearCompletedTask(tasks) {
     return tasks.filter(task => !task.completed);
 }
 
-module.exports = { addTask, toggleTask, clearCompletedTask };
