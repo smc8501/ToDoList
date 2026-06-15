@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>ToDo List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-quartz.css">
+    
 </head>
 
 <body>
@@ -11,12 +14,15 @@
     <button id="addTaskBtn">Add Task</button>
 
     <!-- <input type="text" id="searchInput" placeholder="Search..."> -->
-    <ul id="taskList">
+    <div id="taskList" class="ag-theme-quartz" style="height: 400px; width: 600px;">
         <!-- Tasks will be displayed here -->
-    </ul>
+    </div>
 
     <button id="clearCompletedBtn">Clear Completed</button>
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
     <script type="module" src="./controller.js"></script>
+ 
+
   
 </body>
 </html>

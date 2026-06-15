@@ -1,6 +1,6 @@
 
-import { addTask, toggleTask, clearCompletedTask } from './model.js';
-import { renderTask } from './view.js';
+import { addTask, clearCompletedTask } from './model.js';
+import { renderTaskList, renderTask } from './view.js';
 
 function ToDoApp() {
     let tasks = [];
@@ -11,21 +11,26 @@ function ToDoApp() {
     const clearBtn = document.getElementById("clearCompletedBtn");
 
    
-
+    renderTaskList();
+    
 
     function update() {
-        renderTask(tasks, taskList, handleToggle);
+        renderTask(tasks);
     }
-     function handleToggle(index) {
+
+    function handleToggle(index) {
         tasks = toggleTask(tasks, index);
         update();
 
     }
 
+    
+
     function handleAdd() {
         tasks = addTask(tasks, taskInput.value);
         taskInput.value = "";
         update();
+       
     }
 
     function handleClear() {
@@ -33,10 +38,15 @@ function ToDoApp() {
         update();
     }
 
+
     addTaskBtn.addEventListener("click", handleAdd);
     clearBtn.addEventListener("click", handleClear);
 
+    
+
     update();
+    
+
 
 
 };

@@ -5,5 +5,8 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "ag-grid-community": "^35.3.1"
   }
 }
