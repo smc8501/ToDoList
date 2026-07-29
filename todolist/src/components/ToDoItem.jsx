@@ -8,7 +8,7 @@ const ToDoItem = ({todo, toggleTodo, deleteTodo}) => {
                 style={{ textDecoration: todo.completed ? 'line-through': 'none', cursor: 'pointer'}}>
                     {todo.text}
             </span>
-            <button onClick={() => deleteTodo(todo.id)} className="delete-btn">
+            <button onClick={() => deleteTodo(todo.id)} className="delete-item-btn">
                 Delete
             </button>
         </li>
