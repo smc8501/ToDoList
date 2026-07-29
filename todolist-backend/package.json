@@ -1,0 +1,24 @@
+{
+  "name": "todolist-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smc8501/ToDoList.git"
+  },
+  "author": "Sofia Marijuan Carreno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smc8501/ToDoList/issues"
+  },
+  "homepage": "https://github.com/smc8501/ToDoList#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
