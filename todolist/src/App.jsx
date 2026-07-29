@@ -2,9 +2,11 @@ import { useState } from 'react';
 import ToDoForm from'./components/ToDoForm';
 import ToDoList from './components/ToDoList';
 import './App.css'
+import UserRegistration from './components/UserRegistration';
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [registeredUser, setRegisteredUser] = useState(false);
 
   const addTodo = (text) => {
     
@@ -27,9 +29,15 @@ function App() {
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+  
 
   return (
     <main className="todo-app">
+      {/* If user registered then show Task List and Form, else show the create an account component */}
+
+      <UserRegistration/>
+
+      
       <h1>To Do List</h1>
       <ToDoForm addTodo={addTodo} />
       {todos.length > 0 ? (
