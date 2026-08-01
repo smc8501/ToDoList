@@ -34,17 +34,25 @@ const UserRegistration = () => {
         }
 
         try {
-            const response = await fetch("http//localhost:5000/register", {
+            const response = await fetch("http://localhost:5000/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
-            const data = await response.json();
+            // const responseText = await response.text();
+
+            // const data = responseText ? JSON.parse(responseText) : {};
+
+            let data = {}
+
+            if (response.status !== 204) {
+                data = await response.json();
+            }
 
             if (!response.ok) {
-                throw new Error(data.message || "Registration failed.");
+                throw new Error(data.message || `Registration failed with status: ${response.status}`);
             }
             setSuccess(true);
             setFormData({ username: "", email: "", password: ""}); //Reset Form

@@ -6,7 +6,7 @@ import UserRegistration from './components/UserRegistration';
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [registeredUser, setRegisteredUser] = useState(false);
+  // const [registeredUser, setRegisteredUser] = useState(false);
 
   const addTodo = (text) => {
     
@@ -38,7 +38,6 @@ function App() {
       <UserRegistration/>
 
       
-      <h1>To Do List</h1>
       <ToDoForm addTodo={addTodo} />
       {todos.length > 0 ? (
         <ToDoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
