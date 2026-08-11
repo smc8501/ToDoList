@@ -1,5 +1,5 @@
 # ToDoList
-A web application which allow users plan everyday chores, work assignments, and personal errands.
+A Task Management Platform which allow users plan everyday chores, work assignments, and personal errands.
 ## Core Features
 * Create/Delete Tasks
 ## Features To Be Implemented
