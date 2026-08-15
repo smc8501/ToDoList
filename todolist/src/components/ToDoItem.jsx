@@ -1,16 +1,16 @@
 import { useDispatch } from 'react-redux';
-import {deleteTodo} from './ToDoSlice';
+import {toggleTodo, deleteTodo} from './ToDoSlice';
 import './Components.css';
-import { Divider, List, ListItem, ListItemButton, ToggleButton, Box} from '@mui/material';
+import { Divider, List, ListItem, ListItemButton, Checkbox, Box, Typography} from '@mui/material';
 
 const ToDoItem = ({todo}) => {
     const dispatch = useDispatch();
  
 
 
-    // const handleToggleTodo = (todoId) => {
-    //     dispatch(toggleTodo(todoId));
-    // }
+    const handleToggleTodo = (todoId) => {
+        dispatch(toggleTodo(todoId));
+    }
 
 
     const handleDeleteTodo = (todoId) => {
@@ -22,8 +22,10 @@ const ToDoItem = ({todo}) => {
                 <Divider aria-hidden="true"/>
                 <ListItem>
                     <ListItemButton>
-                        <ToggleButton
-                        value="check"></ToggleButton>
+                        <Checkbox
+                        onChange={handleToggleTodo}
+                        />
+                        <Typography variant="h6">{todo.text}</Typography>
                     </ListItemButton>
                     <ListItemButton type="text" onClick={() => handleDeleteTodo(todo.id)} className="delete-item-btn">
                         Delete
