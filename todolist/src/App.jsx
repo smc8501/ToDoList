@@ -1,5 +1,6 @@
 import ToDoForm from'./components/ToDoForm';
 import ToDoList from './components/ToDoList';
+import {Container, CssBaseline, Stack} from '@mui/material';
 import './App.css'
 
 function App() {
@@ -27,11 +28,17 @@ function App() {
   // };
 
   return (
-    <main className="todo-app">
-      <h1>To Do List</h1>
-      <ToDoForm />
-      <ToDoList />
-    </main>
+    <Container maxWidth="xs">
+      <Stack spacing={2} gap={2} sx={{
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+        <CssBaseline />
+        <h1>To Do List</h1>
+        <ToDoForm />
+        <ToDoList />
+      </Stack>
+    </Container>
   );
 }
 

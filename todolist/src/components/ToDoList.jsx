@@ -1,5 +1,7 @@
 import ToDoItem from './ToDoItem';
 import { useSelector } from 'react-redux';
+import './Components.css';
+import { List } from '@mui/material';
 
 const ToDoList = () => {
     const todoItems = useSelector(state => state.todos.todos);
@@ -13,18 +15,14 @@ const ToDoList = () => {
     }
     return (
         
-        <ul className="todo-list" style={ {'listStyleType': 'none',padding:0,margin: 0}}>
+        <List className="todo-list" style={ {'listStyleType': 'none',padding:0,margin: 0}}>
             {todoItems.map((todoItem) => (
                     <ToDoItem
                     key={todoItem.id}
                     todo={todoItem}
                     />
-
-
-                
-
             ))}
-        </ul>
+        </List>
        
         
     );

@@ -1,14 +1,13 @@
 import { useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo } from './ToDoSlice';
+import { toggleTodo, deleteTodo} from './ToDoSlice';
+import './Components.css';
+import CheckIcon from '@mui/icons-material/Check';
+import { Divider, List, ListItem, ListItemButton, ToggleButton, Box} from '@mui/material';
+
 const ToDoItem = ({todo}) => {
     const dispatch = useDispatch();
-    // const [isEditing, setIsEditing] = useState(false);
+ 
 
-    // const handleSave = () => {
-    //     if (editText.trim()) return;
-    //     dispatch(updateTodo({ id: todo.id, text: editText, completed: false}));
-    //     setIsEditing(false);
-    // };
 
     const handleToggleTodo = (todoId) => {
         dispatch(toggleTodo(todoId));
@@ -19,23 +18,21 @@ const ToDoItem = ({todo}) => {
         dispatch(deleteTodo(todoId));
     }
     return (
-        <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-        
-    
-            <div>
-            
-                <span
-                    onClick={() => handleToggleTodo(todo.id)}
-                    style={{ textDecoration: todo.completed ? 'line-through': 'none', cursor: 'pointer'}}>
-                        {todo.text}
-                </span>
-                <button type="text" onClick={() => handleDeleteTodo(todo.id)} className="delete-item-btn">
-                    Delete
-                </button>
-                    
-            </div>
-
-        </li>
+        <Box sx={{maxWidth: 360}}>
+            <List>
+                <Divider aria-hidden="true"/>
+                <ListItem>
+                    <ListItemButton>
+                        <ToggleButton
+                        value="check"></ToggleButton>
+                    </ListItemButton>
+                    <ListItemButton type="text" onClick={() => handleDeleteTodo(todo.id)} className="delete-item-btn">
+                        Delete
+                    </ListItemButton>
+                </ListItem>
+                <Divider aria-hidden="true"/>
+            </List>
+        </Box>
         
     );
 };

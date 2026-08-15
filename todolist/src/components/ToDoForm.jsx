@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo} from './ToDoSlice';
-
+import { Container, Stack, TextField, Button } from '@mui/material';
+import './Components.css';
 const ToDoForm =  () => {
     const [todoText, setTodoText] = useState('');
     
@@ -20,17 +21,26 @@ const ToDoForm =  () => {
     };
 
     return(
-        <form onSubmit={handleSubmit} className="todo-form">
-            <input
-                type="text"
-                id="todo"
-                name="todo"
-                placeholder="Add a new task..."
-                value={todoText}
-                onChange={(e) => setTodoText(e.target.value)}
-            />
-            <button type="submit">Add</button>
-        </form>
+        <Container maxWidth="xs">
+            
+                <form onSubmit={handleSubmit} className="todo-form">
+                    <Stack direction={"row"} spacing={2} xs={{
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}>
+                    <TextField
+                        type="text"
+                        id="todo"
+                        name="todo"
+                        placeholder="Add a new task..."
+                        value={todoText}
+                        onChange={(e) => setTodoText(e.target.value)}
+                        size="small"
+                    />
+                    <Button type="submit" variant="contained" size="small">Add</Button>
+                    </Stack>
+                </form>
+        </Container>
     );
 
 };
