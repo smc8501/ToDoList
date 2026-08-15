@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo} from './ToDoSlice';
+import {deleteTodo} from './ToDoSlice';
 import './Components.css';
-import CheckIcon from '@mui/icons-material/Check';
 import { Divider, List, ListItem, ListItemButton, ToggleButton, Box} from '@mui/material';
 
 const ToDoItem = ({todo}) => {
@@ -9,9 +8,9 @@ const ToDoItem = ({todo}) => {
  
 
 
-    const handleToggleTodo = (todoId) => {
-        dispatch(toggleTodo(todoId));
-    }
+    // const handleToggleTodo = (todoId) => {
+    //     dispatch(toggleTodo(todoId));
+    // }
 
 
     const handleDeleteTodo = (todoId) => {
