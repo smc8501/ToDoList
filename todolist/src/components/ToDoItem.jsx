@@ -53,7 +53,8 @@ const ToDoItem = ({todo}) => {
                         <Typography variant="h6" sx={{ flexGrow: 1}}>{todo.text}</Typography>
 
                     </Box>
-                    <Chip
+                    <ListItemButton>
+                        <Chip
                         label={currentPriority.toUpperCase()}
                         color={priorityColours[currentPriority] || 'default'}
                         size="small"
@@ -101,6 +102,8 @@ const ToDoItem = ({todo}) => {
                             ))}
 
                         </Menu>
+                    </ListItemButton>
+                    
                     
                     <ListItemButton type="text" onClick={() => handleDeleteTodo(todo.id)}>
                         Delete
